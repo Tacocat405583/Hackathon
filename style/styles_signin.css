@@ -1,0 +1,13 @@
+.container-toot{
+    max-width: 400px;
+    margin: 0 auto;
+    
+}
+body{
+    background: linear-gradient(300deg, #00bfff, #2e449a, #7188e2);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+.form-floating{
+    margin-bottom: 20px;
+}
