@@ -1,0 +1,89 @@
+/* Profile Section Styles */
+.profile-section {
+    min-height: calc(100vh - 80px);
+    padding: 2rem 0;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Profile Image */
+.rounded-circle {
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.rounded-circle:hover {
+    transform: scale(1.05);
+}
+
+/* Form Styles */
+.form-control {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(46, 68, 154, 0.2);
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:disabled {
+    background: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 191, 255, 0.25);
+    border-color: #00bfff;
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(45deg, #2e449a, #7188e2);
+    border: none;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #7188e2, #2e449a);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    border: none;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background: linear-gradient(45deg, #20c997, #28a745);
+    transform: translateY(-2px);
+}
+
+/* Text Styles */
+.text-muted {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}

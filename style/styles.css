@@ -223,6 +223,14 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.form-check a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Set initial color */
+}
+
+.form-check a:hover {
+  color: #00bfff; /* Change color on hover */
+}
 
 
 
