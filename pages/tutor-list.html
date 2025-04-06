@@ -288,6 +288,7 @@
                         <i class="fa-regular fa-star" data-value="3"></i>
                         <i class="fa-regular fa-star" data-value="4"></i>
                         <i class="fa-regular fa-star" data-value="5"></i>
+                        <pclass="fa-regular fa-star">1/5</p>
                     </div>
                     <div class="tutor-details">
                         <p>Mobile app development specialist with focus on iOS and Android. Experience with React Native and Flutter.</p>
@@ -656,6 +657,17 @@
                 details.classList.toggle('expanded');
                 button.textContent = details.classList.contains('expanded') ? 'Read less' : 'Read more';
             });
+        });
+
+        // Update meeting link from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLink = localStorage.getItem('meetingLink');
+            if (savedLink) {
+                const liveLogoLink = document.querySelector('.live-logo a');
+                if (liveLogoLink) {
+                    liveLogoLink.href = savedLink;
+                }
+            }
         });
     </script>
 </body>

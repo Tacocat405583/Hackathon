@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const saveBtn = document.getElementById('saveBtn');
     const form = document.getElementById('profileForm');
     const formInputs = form.querySelectorAll('input, textarea');
+    const meetingLink = document.getElementById('meetingLink');
+    
+    // Load saved meeting link if exists
+    if (localStorage.getItem('meetingLink')) {
+        meetingLink.value = localStorage.getItem('meetingLink');
+    }
     
     // Function to toggle edit mode
     function toggleEditMode(isEditing) {
@@ -23,34 +29,33 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleEditMode(!isCurrentlyEditing);
         
         if (isCurrentlyEditing) {
-            // Reset form to original values once done
+            // Reset form to original values
             form.reset();
+            // Restore saved meeting link
+            if (localStorage.getItem('meetingLink')) {
+                meetingLink.value = localStorage.getItem('meetingLink');
+            }
         }
     });
     
     // Save button click handler
-    form.addEventListener('submit', function(e) {
+    saveBtn.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Here you would typically send the data to your backend but we're not doing that here
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        
-        // For demonstration, we'll just log the data but if I had more sleep I would have though of a better way to do it
-        console.log('Saving profile data:', data);
-        
-        // Show success message, copied from klarn
-        const alert = document.createElement('div');
-        alert.className = 'alert alert-success mt-3';
-        alert.textContent = 'Profile updated successfully!';
-        form.appendChild(alert);
-        
-        // Remove alert after 3 seconds
+        // Save the meeting link
+        localStorage.setItem('meetingLink', meetingLink.value);
+
+        // Show a brief success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'alert alert-success mt-3';
+        successMessage.textContent = 'Meeting link saved successfully!';
+        form.appendChild(successMessage);
+
+        // Remove the message after 2 seconds
         setTimeout(() => {
-            alert.remove();
-        }, 3000);
-        
-        // Exit edit mode
+            successMessage.remove();
+        }, 2000);
+
         toggleEditMode(false);
     });
     
