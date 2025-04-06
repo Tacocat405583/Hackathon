@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.split-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.split {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: width 0.6s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.split-left {
+    background: linear-gradient(300deg, #00bfff, #2e449a, #7188e2);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+.split-right {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.split:hover {
+    width: 65%;
+}
+
+.split:hover + .split {
+    width: 35%;
+}
+
+.split a {
+    position: relative;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.split:hover a {
+    transform: scale(1.1);
+}
+
+.split a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background: white;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.split:hover a::after {
+    width: 100%;
+}
+
+.icon-overlay {
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.1;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.split:hover .icon-overlay {
+    opacity: 0.2;
+    transform: scale(1.2);
+}
