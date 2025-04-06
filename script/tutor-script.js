@@ -4,10 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('profileForm');
     const formInputs = form.querySelectorAll('input, textarea');
     const meetingLink = document.getElementById('meetingLink');
+    const availability = document.getElementById('availability');
+    const nickAvailability = document.getElementById('nickAvailability');
     
-    // Load saved meeting link if exists
+    // Load saved meeting link and availability if exists
     if (localStorage.getItem('meetingLink')) {
         meetingLink.value = localStorage.getItem('meetingLink');
+    }
+    if (localStorage.getItem('availability')) {
+        availability.value = localStorage.getItem('availability');
+        if (nickAvailability) {
+            nickAvailability.textContent = localStorage.getItem('availability');
+        }
     }
     
     // Function to toggle edit mode
@@ -31,9 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isCurrentlyEditing) {
             // Reset form to original values
             form.reset();
-            // Restore saved meeting link
+            // Restore saved meeting link and availability
             if (localStorage.getItem('meetingLink')) {
                 meetingLink.value = localStorage.getItem('meetingLink');
+            }
+            if (localStorage.getItem('availability')) {
+                availability.value = localStorage.getItem('availability');
             }
         }
     });
@@ -42,13 +53,18 @@ document.addEventListener('DOMContentLoaded', function() {
     saveBtn.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Save the meeting link
+        // Save the meeting link and availability
         localStorage.setItem('meetingLink', meetingLink.value);
+        localStorage.setItem('availability', availability.value);
+        
+        if (nickAvailability) {
+            nickAvailability.textContent = availability.value;
+        }
 
         // Show a brief success message
         const successMessage = document.createElement('div');
         successMessage.className = 'alert alert-success mt-3';
-        successMessage.textContent = 'Meeting link saved successfully!';
+        successMessage.textContent = 'Profile updated successfully!';
         form.appendChild(successMessage);
 
         // Remove the message after 2 seconds
