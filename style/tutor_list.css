@@ -1,0 +1,196 @@
+.profile-section {
+    padding: 2rem 0;
+    background: linear-gradient(300deg, #00bfff, #2e449a, #7188e2);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+.tutor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    .tutor-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .tutor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tutor-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tutor-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tutor-card:hover {
+    transform: translateY(-5px);
+}
+
+.tutor-stream-preview {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.tutor-info {
+    padding: 15px;
+}
+
+.tutor-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tutor-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tutor-name {
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.tutor-subject {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.tutor-details {
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tutor-details.expanded {
+    max-height: none;
+}
+
+.read-more {
+    color: #2e449a;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.star-rating {
+    margin: 10px 0;
+}
+
+.section-header {
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.schedule-day {
+    font-weight: 600;
+}
+
+.approved-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.subject-tag {
+    background: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: #333;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card {
+    background: white
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Profile Image */
+.rounded-circle {
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.rounded-circle:hover {
+    transform: scale(1.05);
+}
+
+
+.star-rating i {
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+.star-rating .fa-solid {
+    color: gold;
+  }
+
+
+
+.name-and-icon {
+    display: flex;
+    align-items: center;
+    gap: 80px; /* Space between name and icon */
+}
+
+.name-and-icon .live-logo {
+    width: 20px;
+    height: 20px;
+}
+
+
+.live-logo {
+    position: relative;
+    cursor: pointer;
+}
+
+.live-logo::before {
+    content: "";
+    position: absolute;
+    

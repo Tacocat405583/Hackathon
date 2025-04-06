@@ -5,6 +5,14 @@
     font-family: 'Kumbh Sans',sans-serif;
 }
 
+.navbar__logo {
+  width: auto;
+  height: 80px; /* Adjust the height as needed */
+  margin-right: 10px;
+  max-width: 100%;
+}
+
+
 /* Navbar Styles */
 .navbar {
     background: linear-gradient(300deg, #00bfff, #2e449a, #7188e2);
@@ -130,7 +138,7 @@
     text-decoration: none;
     padding: 10px 20px;
     height: 100%;
-    width: 100%;
+    width: 400px;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
