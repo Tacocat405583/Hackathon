@@ -41,9 +41,9 @@
                 <img src="https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70" alt="Math tutoring session" class="tutor-stream-preview">
                 <div class="tutor-info">
                     <div class="tutor-header">
-                        <img src="../images/profile.jpg" alt="Nicolas Hernandez" class="tutor-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/30.jpg" alt="Nicolas Hernandez" class="tutor-avatar">
                         <div>
-                            <h3 class="tutor-name">Nicolas Hernandez</h3>
+                            <h3 class="tutor-name" id="dynamicTutorName">Nicolas Hernandez</h3>
                             <p class="tutor-subject">Mathematics Tutor</p>
                         </div>
                     </div>
@@ -644,29 +644,9 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../script/star.js"></script>
-    <script>
-        // Add click handler for read more buttons
-        document.querySelectorAll('.read-more').forEach(button => {
-            button.addEventListener('click', () => {
-                const details = button.previousElementSibling;
-                details.classList.toggle('expanded');
-                button.textContent = details.classList.contains('expanded') ? 'Read less' : 'Read more';
-            });
-        });
-
-        // Update meeting link from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLink = localStorage.getItem('meetingLink');
-            if (savedLink) {
-                const liveLogoLink = document.querySelector('.live-logo a');
-                if (liveLogoLink) {
-                    liveLogoLink.href = savedLink;
-                }
-            }
-        });
-    </script>
+    <script src="../script/tutor-list.js"></script>
 </body>
 </html>
